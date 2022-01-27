@@ -7,9 +7,10 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import {LoginComponent} from './login/login.component';
 import {AuthGuardService} from './Service/auth-guard.service';
 
+// @ts-ignore
 const routes: Routes = [
   { path: '',  component: LoginComponent },
- { path: '', canActivate: [AuthGuardService], component: AdminLayoutComponent, children: [
+ { path: '', component: AdminLayoutComponent, children: [
         {
       path: '',
       loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
