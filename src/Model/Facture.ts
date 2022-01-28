@@ -3,11 +3,11 @@ import {Fournisseur} from './Fournisseur';
 
 
 export class Facture {
-  idFacture: number;
-  typeFacture: string;
-   etatPayement: string;
-   Tatal: string;
-   points: number;
+  idFacture: string;
+    etatPayement: string;
+    Total: string;
+    typeFacture: string;
+   //points: string;
    user: User;
    fournisseur: Fournisseur;
 }

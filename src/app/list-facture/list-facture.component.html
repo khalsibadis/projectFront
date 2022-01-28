@@ -1,0 +1,24 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div *ngIf="lisfFactures.length < 1"  class="container-fluid mt-100">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Liste Facture</h5>
+        </div>
+        <div class="card-body cart">
+          <div class="col-sm-12 empty-cart-cls text-center">
+            <h3><strong>Vous n'avez pas de Factures </strong></h3>
+            <a href="#" class="btn btn-primary cart-btn-transform m-3" data-abc="true">Creer une facture</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<div *ngIf="lisfFactures.length >0">
+  <app-table-list [lisfFactures]="lisfFactures" ></app-table-list>
+</div>

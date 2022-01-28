@@ -9,8 +9,8 @@ import {Facture} from '../../Model/Facture';
 export class FactureServiceService {
 
   constructor(private http: HttpClient) { }
-  url = environment.url+'Facture';
+  url = environment.url+'/Facture';
   getListFacture() {
-    return this.http.get<Facture[]>('${this.url}/AfficherList');
+    return this.http.get<Facture[]>(this.url+'/AfficherList');
   }
 }

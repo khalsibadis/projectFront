@@ -1,5 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
 import {FactureServiceService} from '../Service/facture-service.service';
 import {Facture} from '../../Model/Facture';
 
@@ -10,15 +9,11 @@ import {Facture} from '../../Model/Facture';
 })
 export class ListFactureComponent implements OnInit {
 
-  constructor(/*private  factureService: FactureServiceService*/) { }
-  //@Input() lisfFactures: Facture[];
+  constructor(private  factureService: FactureServiceService) { }
+  lisfFactures: any;
   ngOnInit(): void {
-   // this.factureService.getListFacture().subscribe(
-   //   (data) => {
-        //this.lisfFactures = data;
-       // console.log(data);
-   //   }
-   // );
+    this.factureService.getListFacture().subscribe(
+      (data) =>this.lisfFactures = data);
   }
 
 }

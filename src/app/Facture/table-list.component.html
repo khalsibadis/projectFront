@@ -1,27 +1,4 @@
-<div *ngIf="lisfFactures.length < 1"  class="container-fluid mt-100">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          <h5>Liste Facture</h5>
-        </div>
-        <div class="card-body cart">
-          <div class="col-sm-12 empty-cart-cls text-center"> <img src="/assets/img/empty.jpg" width="130" height="130" class="img-fluid mb-4 mr-3">
-            <h3><strong>Vous n'avez pas de Factures </strong></h3>
-            <a href="#" class="btn btn-primary cart-btn-transform m-3" data-abc="true">Creer une facture</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<br>
-<div *ngIf="lisfFactures.length > 0" >
-
-  <div class="panel-header panel-header-sm" >
-  </div>
+<div >
   <div class="main-content">
     <div class="row">
       <div class="col-md-12">
@@ -56,9 +33,8 @@
                 <tr *ngFor="let facture of lisfFactures " >
                   <td class="border-top-0">{{facture.idFacture}}</td>
                   <td class="border-top-0">{{facture.etatPayement}}</td>
-                  <td class="border-top-0">{{facture.fournisseur}}</td>
-                  <td class="border-top-0">{{facture.points}}</td>
-                  <td class="border-top-0" >
+                  <td class="border-top-0">{{facture.Total}}</td>
+                  <td class="border-top-0">{{facture.typeFacture}}</td>
                   <td class="text-right">
                     <button style="width: 100px">Delete</button>
                   </td>
@@ -73,7 +49,7 @@
           </div>
         </div>
       </div>
-      <button style="width: 100px" (click)="Route()">Add</button>
+      <button class="btn btn-primary cart-btn-transform m-3" style="width: 100px; background-color: #e95e38" (click)="Route()">Add</button>
     </div>
   </div>
 
