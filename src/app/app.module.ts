@@ -14,6 +14,8 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginComponent } from './login/login.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
+import { ListFactureComponent } from './list-facture/list-facture.component';
+import {AdminLayoutModule} from './layouts/admin-layout/admin-layout.module';
 
 @NgModule({
   imports: [
@@ -24,13 +26,15 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
     RouterModule,
     AppRoutingModule,
     NgbModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AdminLayoutModule
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
-    FormulaireComponent
+    FormulaireComponent,
+    ListFactureComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

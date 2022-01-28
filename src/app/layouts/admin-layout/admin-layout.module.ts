@@ -21,6 +21,9 @@ import { LoginComponent} from '../../login/login.component';
     NgbModule,
     ToastrModule.forRoot()
   ],
+  exports: [
+    TableListComponent
+  ],
   declarations: [
     DashboardComponent,
     UserProfileComponent,
