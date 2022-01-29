@@ -20,6 +20,7 @@ export class ListFactureComponent implements OnInit {
   ngOnInit(): void {
     this.factureService.getListFacture().subscribe(
       (data) => this.lisfFactures = data);
+    this.factureService.getListFacture();
   }
 
   deleteFacture(facture: Facture) {

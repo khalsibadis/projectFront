@@ -8,7 +8,6 @@ import {LoginComponent} from './login/login.component';
 import {AuthGuardService} from './Service/auth-guard.service';
 import {FormulaireComponent} from './formulaire/formulaire.component';
 
-// @ts-ignore
 const routes: Routes = [
   { path: '',  component: LoginComponent },
   { path: '', component: AdminLayoutComponent, children: [

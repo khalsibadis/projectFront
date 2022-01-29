@@ -2,7 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Facture} from '../../Model/Facture';
+import {Observable} from 'rxjs';
 
+// @ts-ignore
 @Injectable({
   providedIn: 'root'
 })
@@ -20,4 +22,9 @@ export class FactureServiceService {
   deleteFactureService(id: string) {
     return this.http.delete(this.url + '/supprimerFacture/'+id);
   }
+  addFactureService(facture: Facture,idFournisseur:string,idUser):Observable<any>{
+    return this.http.post(this.url+'/ajouterFacture/'+idFournisseur+'/'+idUser , facture);
+  }
+
+
 }

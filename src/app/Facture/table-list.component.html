@@ -19,30 +19,38 @@
                 <th>
                   Total
                 </th>
-                <th class="text-right">
+                <th class="text_align-center">
                   TypeFacture
                 </th>
-                <th class="text-right">
+                <th class="text_align-center">
                   Point
                 </th>
-                <th class="text-right">
+                <th class="text_align-center">
+                  Fournisser
+                </th>
+                <th class="text_align-center">
+                  Client
+                </th>
+                <th class="text_align-center">
                   Delete
                 </th>
-                <th class="text-right">
+                <th class="text_align-center">
                   Update
                 </th>
                 </thead>
                 <tbody>
                 <tr *ngFor="let facture of lisfFactures " >
-                  <td class="">{{facture.id}}</td>
-                  <td class="">{{facture.etatPayement}}</td>
-                  <td class="">{{facture.total}}</td>
-                  <td class="">{{facture.typeFacture}}</td>
-                  <td class="">{{facture.nbrPoint}}</td>
-                  <td class="text-right">
+                  <td class="text_align-center">{{facture.id}}</td>
+                  <td class="text_align-center">{{facture.etatPayement}}</td>
+                  <td class="text_align-centert">{{facture.total}}</td>
+                  <td class="text_align-center">{{facture.typeFacture}}</td>
+                  <td class="text_align-center">{{facture.nbrPoint}}</td>
+                  <td class="text_align-center">{{facture.fournisseur.nom}}</td>
+                  <td class="text_align-center">{{facture.user.userName}}</td>
+                  <td class="text_align-center">
                     <button (click)="deleteFacture(facture)" style="width: 100px">Delete</button>
                   </td>
-                  <td class="text-right">
+                  <td class="text_align-center">
                     <button style="width: 100px">Update</button>
                   </td>
 

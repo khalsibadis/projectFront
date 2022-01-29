@@ -6,8 +6,8 @@ export class Facture {
   id: string;
   typeFacture: string;
   etatPayement: string;
-  nbrPoint: string;
-  total: string;
+  nbrPoint: number;
+  total: number;
   user: User;
   fournisseur: Fournisseur;
 }

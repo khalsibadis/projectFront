@@ -15,12 +15,12 @@ export class TableListComponent implements OnInit {
   @Input() lisfFactures: Facture[];
   @Output() deleteEvent = new EventEmitter<Facture>();
 
-  ngOnInit() {
+  ngOnInit():void {
 
   }
 
   Route() {
-    this.router.navigate(['/AddFacture']);
+    this.router.navigate(['Facture/AddFacture']);
   }
 
   deleteFacture(facture: Facture) {
