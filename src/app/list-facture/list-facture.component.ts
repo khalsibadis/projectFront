@@ -3,7 +3,7 @@ import {FactureServiceService} from '../Service/facture-service.service';
 import {Facture} from '../../Model/Facture';
 
 
-//import swal from 'sweetalert';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-list-facture',
@@ -23,27 +23,28 @@ export class ListFactureComponent implements OnInit {
   }
 
   deleteFacture(facture: Facture) {
-   /* swal({
-      title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover this Facture!",
-      icon: "warning",
-      buttons: ["Cancel","Confirm"],
+    swal({
+      title: 'Are you sure?',
+      text: 'Once deleted, you will not be able to recover this product!',
+      icon: 'warning',
+      buttons: ['Cancel', 'Confirm'],
       dangerMode: true,
     })
       .then((willDelete) => {
 
-        if (willDelete) {*/
-     this.factureService.deleteFactureService(facture.id);
-    let i = this.lisfFactures.indexOf(facture);
-    this.factureService.deleteFactureService(facture.id).subscribe(
-      () => this.lisfFactures.splice(i, 1)
-    );
-    /*swal("Facture has been deleted!", {
-      icon: "success",
-    });*/
-  } /*else {
-          swal("Product  is safe!");
-        }*/
-
-
+        if (willDelete) {
+          this.factureService.deleteFactureService(facture.id);
+          let i = this.lisfFactures.indexOf(facture);
+          console.log(facture.id);
+          this.factureService.deleteFactureService(facture.id).subscribe(
+            () => this.lisfFactures.splice(i, 1)
+          );
+          swal('Product has been deleted!', {
+            icon: 'success',
+          });
+        } else {
+          swal('Product  is safe!');
+        }
+      });
+  }
 }
