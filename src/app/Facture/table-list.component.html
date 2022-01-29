@@ -23,6 +23,9 @@
                   TypeFacture
                 </th>
                 <th class="text-right">
+                  Point
+                </th>
+                <th class="text-right">
                   Delete
                 </th>
                 <th class="text-right">
@@ -35,6 +38,7 @@
                   <td class="">{{facture.etatPayement}}</td>
                   <td class="">{{facture.total}}</td>
                   <td class="">{{facture.typeFacture}}</td>
+                  <td class="">{{facture.nbrPoint}}</td>
                   <td class="text-right">
                     <button (click)="deleteFacture(facture)" style="width: 100px">Delete</button>
                   </td>

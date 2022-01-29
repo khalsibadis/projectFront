@@ -11,7 +11,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'Facture',     component: ListFactureComponent },
     { path: 'Contact',     component: TypographyComponent },
-  { path: 'AddFacture',  component: FormulaireComponent},
+  { path: 'Facture/AddFacture',  component: FormulaireComponent},
 
 
 ];
