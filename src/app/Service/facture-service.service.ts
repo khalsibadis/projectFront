@@ -18,6 +18,6 @@ export class FactureServiceService {
   }
 
   deleteFactureService(id: string) {
-    return this.http.delete(this.url + '/supprimerFacture/${id}');
+    return this.http.delete(this.url + '/supprimerFacture/'+id);
   }
 }

@@ -1,7 +1,6 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component,EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
 import {Facture} from '../../Model/Facture';
-import * as EventEmitter from 'events';
 
 @Component({
   selector: 'app-table-list',

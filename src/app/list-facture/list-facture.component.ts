@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FactureServiceService} from '../Service/facture-service.service';
 import {Facture} from '../../Model/Facture';
 
+
+//import swal from 'sweetalert';
+
 @Component({
   selector: 'app-list-facture',
   templateUrl: './list-facture.component.html',
@@ -20,11 +23,27 @@ export class ListFactureComponent implements OnInit {
   }
 
   deleteFacture(facture: Facture) {
+   /* swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this Facture!",
+      icon: "warning",
+      buttons: ["Cancel","Confirm"],
+      dangerMode: true,
+    })
+      .then((willDelete) => {
+
+        if (willDelete) {*/
      this.factureService.deleteFactureService(facture.id);
-    const i = this.lisfFactures.indexOf(facture);
+    let i = this.lisfFactures.indexOf(facture);
     this.factureService.deleteFactureService(facture.id).subscribe(
       () => this.lisfFactures.splice(i, 1)
     );
-  }
+    /*swal("Facture has been deleted!", {
+      icon: "success",
+    });*/
+  } /*else {
+          swal("Product  is safe!");
+        }*/
+
 
 }
