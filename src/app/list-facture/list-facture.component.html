@@ -20,5 +20,5 @@
 
 <br>
 <div *ngIf="lisfFactures.length >0">
-  <app-table-list [lisfFactures]="lisfFactures" ></app-table-list>
+  <app-table-list [lisfFactures]="lisfFactures " (deleteEvent)="deleteFacture($event)" ></app-table-list>
 </div>

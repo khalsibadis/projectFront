@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Facture} from '../../Model/Facture';
@@ -8,9 +8,16 @@ import {Facture} from '../../Model/Facture';
 })
 export class FactureServiceService {
 
-  constructor(private http: HttpClient) { }
-  url = environment.url+'/Facture';
+  constructor(private http: HttpClient) {
+  }
+
+  url = environment.url + '/Facture';
+
   getListFacture() {
-    return this.http.get<Facture[]>(this.url+'/AfficherList');
+    return this.http.get<Facture[]>(this.url + '/AfficherList');
+  }
+
+  deleteFactureService(id: string) {
+    return this.http.delete(this.url + '/supprimerFacture/${id}');
   }
 }

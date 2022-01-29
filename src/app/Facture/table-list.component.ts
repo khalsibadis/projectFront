@@ -1,6 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
 import {Facture} from '../../Model/Facture';
+import * as EventEmitter from 'events';
 
 @Component({
   selector: 'app-table-list',
@@ -9,13 +10,21 @@ import {Facture} from '../../Model/Facture';
 })
 export class TableListComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+  }
 
   @Input() lisfFactures: Facture[];
+  @Output() deleteEvent = new EventEmitter<Facture>();
+
   ngOnInit() {
 
   }
-Route() {
-  this.router.navigate(['/AddFacture']);
-}
+
+  Route() {
+    this.router.navigate(['/AddFacture']);
+  }
+
+  deleteFacture(facture: Facture) {
+    this.deleteEvent.emit(facture);
+  }
 }

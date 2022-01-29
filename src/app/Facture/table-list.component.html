@@ -11,16 +11,16 @@
               <table class="table">
                 <thead class=" text-primary">
                 <th>
-                  Name
+                  Id
                 </th>
                 <th>
-                  Country
+                  EtatPayement
                 </th>
                 <th>
-                  City
+                  Total
                 </th>
                 <th class="text-right">
-                  Salary
+                  TypeFacture
                 </th>
                 <th class="text-right">
                   Delete
@@ -31,12 +31,12 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let facture of lisfFactures " >
-                  <td class="border-top-0">{{facture.idFacture}}</td>
-                  <td class="border-top-0">{{facture.etatPayement}}</td>
-                  <td class="border-top-0">{{facture.Total}}</td>
-                  <td class="border-top-0">{{facture.typeFacture}}</td>
+                  <td class="">{{facture.id}}</td>
+                  <td class="">{{facture.etatPayement}}</td>
+                  <td class="">{{facture.total}}</td>
+                  <td class="">{{facture.typeFacture}}</td>
                   <td class="text-right">
-                    <button style="width: 100px">Delete</button>
+                    <button (click)="deleteFacture(facture)" style="width: 100px">Delete</button>
                   </td>
                   <td class="text-right">
                     <button style="width: 100px">Update</button>
