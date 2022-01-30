@@ -15,7 +15,7 @@ export class ListFactureComponent implements OnInit {
   constructor(private  factureService: FactureServiceService) {
   }
 
-  lisfFactures: any;
+  lisfFactures: Facture[];
 
   ngOnInit(): void {
     this.factureService.getListFacture().subscribe(
@@ -34,10 +34,10 @@ export class ListFactureComponent implements OnInit {
       .then((willDelete) => {
 
         if (willDelete) {
-          this.factureService.deleteFactureService(facture.id);
+          this.factureService.deleteFactureService(String(facture.id));
           let i = this.lisfFactures.indexOf(facture);
           console.log(facture.id);
-          this.factureService.deleteFactureService(facture.id).subscribe(
+          this.factureService.deleteFactureService(String(facture.id)).subscribe(
             () => this.lisfFactures.splice(i, 1)
           );
           swal('Product has been deleted!', {

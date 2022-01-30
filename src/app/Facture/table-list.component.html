@@ -51,7 +51,8 @@
                     <button (click)="deleteFacture(facture)" style="width: 100px">Delete</button>
                   </td>
                   <td class="text_align-center">
-                    <button style="width: 100px">Update</button>
+                    <button  (click)="routerToUapdate()" style="width: 100px">Update</button>
+                    <a   [routerLink]="['/Facture/UapdateFacture',facture.id]" class="btn btn-primary cart-btn-transform m-3" data-abc="true">Update</a>
                   </td>
 
                 </tr>

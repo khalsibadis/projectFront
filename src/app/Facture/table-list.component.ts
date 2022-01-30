@@ -22,6 +22,10 @@ export class TableListComponent implements OnInit {
   Route() {
     this.router.navigate(['Facture/AddFacture']);
   }
+  routerToUapdate(){
+    this.router.navigate(['Facture/UapdateFacture']);
+  }
+
 
   deleteFacture(facture: Facture) {
     this.deleteEvent.emit(facture);

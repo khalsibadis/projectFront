@@ -3,7 +3,7 @@ import {Fournisseur} from './Fournisseur';
 
 
 export class Facture {
-  id: string;
+  id: number;
   typeFacture: string;
   etatPayement: string;
   nbrPoint: number;

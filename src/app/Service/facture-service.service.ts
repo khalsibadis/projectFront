@@ -26,5 +26,12 @@ export class FactureServiceService {
     return this.http.post(this.url+'/ajouterFacture/'+idFournisseur+'/'+idUser , facture);
   }
 
+  modifierFacture(facture: Object){
+    return this.http.put<Facture>(this.url+'/modifierFacture',facture);
+  }
+
+  getFactureById(id: number){
+    return this.http.get(this.url+'/afficherFacture/'+id);
+  }
 
 }
