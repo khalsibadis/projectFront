@@ -11,16 +11,18 @@ import { ChartsModule } from 'ng2-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent} from '../../login/login.component';
+import {AppModule} from '../../app.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forChild(AdminLayoutRoutes),
-    FormsModule,
-    ChartsModule,
-    NgbModule,
-    ToastrModule.forRoot()
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(AdminLayoutRoutes),
+        FormsModule,
+        ChartsModule,
+        NgbModule,
+        ToastrModule.forRoot(),
+
+    ],
   exports: [
     TableListComponent
   ],

@@ -7,30 +7,30 @@
     <h3 style="margin: 0px 0px 50px 200px;">Modifier Facture</h3>
     <form (ngSubmit)="Uapdate()" #f="ngForm" >
       <div class="form-group">
-        <label for="name">Etat de Payement </label>
-        <input [(ngModel)]="Newfacture.etatPayement"  type="Text" id="name" class="form-control" name="name" ngModel required>
+        <label for="name">Etat de Payement : <strong style="color: #e95e38;font-size: 20px"> {{Newfacture.etatPayement}}</strong>  </label>
+        <input  [(ngModel)]='Newfacture.etatPayement'  type="Text" id="name" class="form-control" name="name" ngModel required>
       </div>
       <div class="form-group">
-        <label  for="name">Total </label>
-        <input [(ngModel)]="Newfacture.total" type="number" id="name1" class="form-control" name="name" ngModel required>
+        <label  for="name">Total : <strong style="color: #e95e38;font-size: 20px"> {{Newfacture.total}}</strong> </label>
+        <input [(ngModel)]="Newfacture.total"  type="number" id="name1" class="form-control" name="name" ngModel required>
       </div>
       <div class="form-group">
-        <label  for="name">nombre de Point </label>
+        <label  for="name">nombre de Point : <strong style="color: #e95e38;font-size: 20px"> {{Newfacture.nbrPoint}}</strong></label>
         <input [(ngModel)]="Newfacture.nbrPoint" type="number" id="name3" class="form-control" name="name" ngModel required>
       </div>
       <div class="form-group">
-        <label  for="name">Type de facture</label>
+        <label  for="name">Type de facture : <strong style="color: #e95e38;font-size: 20px"> {{Newfacture.typeFacture}}</strong></label>
         <input [(ngModel)]="Newfacture.typeFacture" type="Text" id="name2" class="form-control" name="name" ngModel required>
       </div>
       <div class="form-group">
-        <label for="status">Fournisser</label>
-        <select  id="status" class="form-control" name="status" [(ngModel)]="idFournisser" >
+        <label for="status">Fournisser : <strong style="color: #e95e38;font-size: 20px"> {{Newfacture.fournisseur.nom}}</strong></label>
+        <select  id="status" class="form-control" name="status" [(ngModel)]="Newfacture.fournisseur.id" >
           <option *ngFor="let list of listFournisser" [value]="list.id" >{{list.nom}}</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="status">Client</label>
-        <select  id="status1" class="form-control" name="status" [(ngModel)]="idUser" >
+        <label for="status">Client : <strong style="color: #e95e38;font-size: 20px"> {{Newfacture.user.userName}}</strong></label>
+        <select  id="status1" class="form-control" name="status" [(ngModel)]="Newfacture.user.id" >
           <option *ngFor="let listC of ListClient" [value]="listC.id" >{{listC.userName}}</option>
         </select>
       </div>
@@ -39,3 +39,4 @@
   </div>
 </div>
 
+:

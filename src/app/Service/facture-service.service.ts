@@ -34,4 +34,7 @@ export class FactureServiceService {
     return this.http.get<Facture>(this.url+'/afficherFacture/'+id);
   }
 
+  afficherFacturebyFournisseur( idFournisseur:number){
+    return this.http.get<Facture[]>(this.url+'/affichierFactureByFournisseur/'+idFournisseur)
+  }
 }

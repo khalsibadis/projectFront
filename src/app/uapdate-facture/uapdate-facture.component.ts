@@ -37,8 +37,9 @@ export class UapdateFactureComponent implements OnInit {
         let id =Number(d.get('id'));
        this.factureServiceService.getFactureById(id).subscribe(
           d=>{
-            console.log(d)
+
             this.Newfacture=d;
+            console.log(this.Newfacture)
           }
         )
       }

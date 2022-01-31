@@ -17,6 +17,7 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
 import { ListFactureComponent } from './list-facture/list-facture.component';
 import {AdminLayoutModule} from './layouts/admin-layout/admin-layout.module';
 import { UapdateFactureComponent } from './uapdate-facture/uapdate-facture.component';
+import { ListUserComponent } from './list-user/list-user.component';
 
 @NgModule({
   imports: [
@@ -36,9 +37,13 @@ import { UapdateFactureComponent } from './uapdate-facture/uapdate-facture.compo
     LoginComponent,
     FormulaireComponent,
     ListFactureComponent,
-    UapdateFactureComponent
+    UapdateFactureComponent,
+    ListUserComponent
   ],
   providers: [],
+  exports: [
+    ListUserComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
