@@ -19,7 +19,7 @@ export class UapdateFactureComponent implements OnInit {
               private clientService:ClientService) { }
 
 
-  Newfacture :any;
+  Newfacture :Facture;
   listFournisser:Fournisseur[];
   ListClient:User[];
   idFournisser:number;
@@ -27,6 +27,7 @@ export class UapdateFactureComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.Newfacture=new Facture();
     this.fournisserService.getListFournisser().subscribe(
       (data)=>this.listFournisser=data);
     this.clientService.getListUser().subscribe(
@@ -36,6 +37,7 @@ export class UapdateFactureComponent implements OnInit {
         let id =Number(d.get('id'));
        this.factureServiceService.getFactureById(id).subscribe(
           d=>{
+            console.log(d)
             this.Newfacture=d;
           }
         )

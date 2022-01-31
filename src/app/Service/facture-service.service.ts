@@ -31,7 +31,7 @@ export class FactureServiceService {
   }
 
   getFactureById(id: number){
-    return this.http.get(this.url+'/afficherFacture/'+id);
+    return this.http.get<Facture>(this.url+'/afficherFacture/'+id);
   }
 
 }
