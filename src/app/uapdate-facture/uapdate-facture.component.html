@@ -4,6 +4,7 @@
 
 <div class="row" style="margin: 50px 0px 0px 100px">
   <div class="com-sm-8 col-sm-offset-2">
+    <h3 style="margin: 0px 0px 50px 200px;">Modifier Facture</h3>
     <form (ngSubmit)="Uapdate()" #f="ngForm" >
       <div class="form-group">
         <label for="name">Etat de Payement </label>
@@ -11,11 +12,11 @@
       </div>
       <div class="form-group">
         <label  for="name">Total </label>
-        <input [(ngModel)]="Newfacture.total" type="text" id="name1" class="form-control" name="name" ngModel required>
+        <input [(ngModel)]="Newfacture.total" type="number" id="name1" class="form-control" name="name" ngModel required>
       </div>
       <div class="form-group">
         <label  for="name">nombre de Point </label>
-        <input [(ngModel)]="Newfacture.nbrPoint" type="text" id="name3" class="form-control" name="name" ngModel required>
+        <input [(ngModel)]="Newfacture.nbrPoint" type="number" id="name3" class="form-control" name="name" ngModel required>
       </div>
       <div class="form-group">
         <label  for="name">Type de facture</label>

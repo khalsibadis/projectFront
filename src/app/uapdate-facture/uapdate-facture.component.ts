@@ -6,7 +6,6 @@ import {FournisserService} from '../Service/FournisserService';
 import {ClientService} from '../Service/ClientService';
 import {Fournisseur} from '../../Model/Fournisseur';
 import {User} from '../../Model/User';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-uapdate-facture',
@@ -14,13 +13,19 @@ import {Observable} from 'rxjs';
   styleUrls: ['./uapdate-facture.component.css']
 })
 export class UapdateFactureComponent implements OnInit {
-  lisfFactures: any;
-  constructor(private factureServiceService:FactureServiceService, private router:Router,private activatedRoute:ActivatedRoute,private fournisserService:FournisserService,private clientService:ClientService) { }
-  Newfacture :Facture;
+  constructor(private factureServiceService:FactureServiceService,
+              private router:Router,private activatedRoute:ActivatedRoute,
+              private fournisserService:FournisserService,
+              private clientService:ClientService) { }
+
+
+  Newfacture :any;
   listFournisser:Fournisseur[];
   ListClient:User[];
   idFournisser:number;
   idUser:number;
+
+
   ngOnInit(): void {
     this.fournisserService.getListFournisser().subscribe(
       (data)=>this.listFournisser=data);
@@ -31,13 +36,15 @@ export class UapdateFactureComponent implements OnInit {
         let id =Number(d.get('id'));
        this.factureServiceService.getFactureById(id).subscribe(
           d=>{
-            this.Newfacture=<Facture>d;
+            this.Newfacture=d;
           }
         )
       }
     )
 
   }
+
+
 Uapdate(){
     this.Newfacture.fournisseur.id=this.idFournisser;
   this.Newfacture.user.id=this.idUser;

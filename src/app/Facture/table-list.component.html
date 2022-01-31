@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h4 class="card-title"> Simple Table</h4>
+            <h4 class="card-title">List des Factures</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -25,18 +25,18 @@
                 <th class="text_align-center">
                   Point
                 </th>
-                <th class="text_align-center">
-                  Fournisser
+                <th class="text_align-center">Fournisser
                 </th>
-                <th class="text_align-center">
-                  Client
+
+                <th class="text_align-center">Client
                 </th>
-                <th class="text_align-center">
-                  Delete
+
+                <th class="text_align-center">Delete
                 </th>
-                <th class="text_align-center">
-                  Update
+
+                <th class="text_align-center">Update
                 </th>
+
                 </thead>
                 <tbody>
                 <tr *ngFor="let facture of lisfFactures " >
@@ -48,11 +48,10 @@
                   <td class="text_align-center">{{facture.fournisseur.nom}}</td>
                   <td class="text_align-center">{{facture.user.userName}}</td>
                   <td class="text_align-center">
-                    <button (click)="deleteFacture(facture)" style="width: 100px">Delete</button>
+                    <button (click)="deleteFacture(facture)" class="btn btn-danger cart-btn-transform m-3" style="width: 100px;background-color: darkred">Delete</button>
                   </td>
                   <td class="text_align-center">
-                    <button  (click)="routerToUapdate()" style="width: 100px">Update</button>
-                    <a   [routerLink]="['/Facture/UapdateFacture',facture.id]" class="btn btn-primary cart-btn-transform m-3" data-abc="true">Update</a>
+                    <a   [routerLink]="['/Facture/UapdateFacture',facture.id]" class="btn btn-info cart-btn-transform m-3" data-abc="true">Update</a>
                   </td>
 
                 </tr>
