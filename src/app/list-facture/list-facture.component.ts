@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FactureServiceService} from '../Service/facture-service.service';
-import {Facture} from '../../Model/Facture';
+import {Facture} from '../Model/Facture';
 
 
 import swal from 'sweetalert';
@@ -20,7 +20,6 @@ export class ListFactureComponent implements OnInit {
   ngOnInit(): void {
     this.factureService.getListFacture().subscribe(
       (data) => this.lisfFactures = data);
-    this.factureService.getListFacture();
   }
 
   deleteFacture(facture: Facture) {
@@ -43,9 +42,9 @@ export class ListFactureComponent implements OnInit {
           swal('Product has been deleted!', {
             icon: 'success',
           });
-        } else {
+        }/* else {
           swal('Product  is safe!');
-        }
+        }*/
       });
   }
 }

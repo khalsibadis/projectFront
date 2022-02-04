@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {FactureServiceService} from '../Service/facture-service.service';
-import {Facture} from '../../Model/Facture';
+import {Facture} from '../Model/Facture';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FournisserService} from '../Service/FournisserService';
 import {ClientService} from '../Service/ClientService';
-import {Fournisseur} from '../../Model/Fournisseur';
-import {User} from '../../Model/User';
+import {Fournisseur} from '../Model/Fournisseur';
+import {User} from '../Model/User';
 
 @Component({
   selector: 'app-uapdate-facture',
@@ -22,8 +22,6 @@ export class UapdateFactureComponent implements OnInit {
   Newfacture :Facture;
   listFournisser:Fournisseur[];
   ListClient:User[];
-  idFournisser:number;
-  idUser:number;
 
 
   ngOnInit(): void {
@@ -37,7 +35,6 @@ export class UapdateFactureComponent implements OnInit {
         let id =Number(d.get('id'));
        this.factureServiceService.getFactureById(id).subscribe(
           d=>{
-
             this.Newfacture=d;
             console.log(this.Newfacture)
           }
@@ -49,8 +46,6 @@ export class UapdateFactureComponent implements OnInit {
 
 
 Uapdate(){
-    this.Newfacture.fournisseur.id=this.idFournisser;
-  this.Newfacture.user.id=this.idUser;
     this.factureServiceService.modifierFacture(this.Newfacture).subscribe(
       d=>{
         this.router.navigate(['Facture']);

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FactureServiceService} from '../Service/facture-service.service';
-import {Facture} from '../../Model/Facture';
+import {Facture} from '../Model/Facture';
 import {Observable} from 'rxjs';
+import {FournisserService} from '../Service/FournisserService';
 
 @Component({
   selector: 'app-list-user',
@@ -10,12 +11,12 @@ import {Observable} from 'rxjs';
 })
 export class ListUserComponent implements OnInit {
 
-  constructor(private factureServiceService:FactureServiceService) { }
+  constructor(private fournisserService:FournisserService) { }
   ListFacture:Facture[]
   ngOnInit(): void {
 
 
-    this.factureServiceService.afficherFacturebyFournisseur(1).subscribe(
+    this.fournisserService.afficherFacturebyFournisseur(1).subscribe(
       (data) => this.ListFacture = data);
   }
 

@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FournisserService} from '../Service/FournisserService';
-import {Fournisseur} from '../../Model/Fournisseur';
+import {Fournisseur} from '../Model/Fournisseur';
 import {ClientService} from '../Service/ClientService';
-import {User} from '../../Model/User';
+import {User} from '../Model/User';
 import {FactureServiceService} from '../Service/facture-service.service';
-import {Facture} from '../../Model/Facture';
+import {Facture} from '../Model/Facture';
 import { Router} from '@angular/router';
 
 

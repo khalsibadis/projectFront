@@ -1,6 +1,6 @@
 import {Component,EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
-import {Facture} from '../../Model/Facture';
+import {Facture} from '../Model/Facture';
 
 @Component({
   selector: 'app-table-list',
@@ -22,10 +22,6 @@ export class TableListComponent implements OnInit {
   Route() {
     this.router.navigate(['Facture/AddFacture']);
   }
-  routerToUapdate(){
-    this.router.navigate(['Facture/UapdateFacture']);
-  }
-
 
   deleteFacture(facture: Facture) {
     this.deleteEvent.emit(facture);
