@@ -5,7 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FournisserService} from '../Service/FournisserService';
 import {ClientService} from '../Service/ClientService';
 import {Fournisseur} from '../Model/Fournisseur';
-import {User} from '../Model/User';
+
 
 @Component({
   selector: 'app-uapdate-facture',
@@ -21,7 +21,7 @@ export class UapdateFactureComponent implements OnInit {
 
   Newfacture :Facture;
   listFournisser:Fournisseur[];
-  ListClient:User[];
+  ListClient:Fournisseur[];
 
 
   ngOnInit(): void {

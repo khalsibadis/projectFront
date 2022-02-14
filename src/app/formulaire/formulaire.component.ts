@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {FournisserService} from '../Service/FournisserService';
 import {Fournisseur} from '../Model/Fournisseur';
 import {ClientService} from '../Service/ClientService';
-import {User} from '../Model/User';
 import {FactureServiceService} from '../Service/facture-service.service';
 import {Facture} from '../Model/Facture';
 import { Router} from '@angular/router';
@@ -19,7 +18,7 @@ export class FormulaireComponent implements OnInit {
   }
   factures = new Facture();
   listFournisser:Fournisseur[];
-  ListClient:User[];
+  ListClient:Fournisseur[];
   idFournisser:string;
   idUser:string;
 
@@ -31,7 +30,7 @@ export class FormulaireComponent implements OnInit {
      (data)=>this.ListClient=data);
   }
   onSubmit(){
-    this.factureServiceService.addFactureService(this.factures,this.idFournisser,this.idUser).subscribe();
+    this.factureServiceService.addFactureService(this.factures,this.idFournisser).subscribe();
     this.factureServiceService.getListFacture();
     this.router.navigate(['Facture']);
 

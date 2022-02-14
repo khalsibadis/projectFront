@@ -1,4 +1,3 @@
-import {User} from './User';
 import {Fournisseur} from './Fournisseur';
 
 
@@ -8,6 +7,6 @@ export class Facture {
   etatPayement: string;
   nbrPoint: number;
   total: number;
-  user: User;
+  user: string;
   fournisseur: Fournisseur;
 }

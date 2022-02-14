@@ -29,8 +29,8 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="status">Client : <strong style="color: #e95e38;font-size: 20px"> {{Newfacture.user.userName}}</strong></label>
-        <select  id="status1" class="form-control" name="status" [(ngModel)]="Newfacture.user.id" >
+        <label for="status">Client : <strong style="color: #e95e38;font-size: 20px"> {{Newfacture.user}}</strong></label>
+        <select  id="status1" class="form-control" name="status" [(ngModel)]="Newfacture.user" >
           <option *ngFor="let listC of ListClient" [value]="listC.id" >{{listC.userName}}</option>
         </select>
       </div>

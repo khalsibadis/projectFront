@@ -22,8 +22,8 @@ export class FactureServiceService {
   deleteFactureService(id: string) {
     return this.http.delete(this.url + '/supprimerFacture/'+id);
   }
-  addFactureService(facture: Facture,idFournisseur:string,idUser):Observable<any>{
-    return this.http.post(this.url+'/ajouterFacture/'+idFournisseur+'/'+idUser , facture);
+  addFactureService(facture: Facture,idFournisseur:string):Observable<any>{
+    return this.http.post(this.url+'/ajouterFacture/'+idFournisseur , facture);
   }
 
   modifierFacture(facture: Object){

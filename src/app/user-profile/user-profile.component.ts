@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FournisserService} from '../Service/FournisserService';
+import {Fournisseur} from '../Model/Fournisseur';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-user-profile',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-
-  constructor() { }
+fournisseur:Fournisseur;
+  constructor(private fournisserService:FournisserService) {}
 
   ngOnInit() {
+    this.fournisserService.afficherFournisseurById(1).subscribe(
+      (data)=>this.fournisseur=data);
+    ;
   }
 
 }
