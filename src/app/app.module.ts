@@ -18,6 +18,7 @@ import { ListFactureComponent } from './list-facture/list-facture.component';
 import {AdminLayoutModule} from './layouts/admin-layout/admin-layout.module';
 import { UapdateFactureComponent } from './uapdate-facture/uapdate-facture.component';
 import { ListUserComponent } from './list-user/list-user.component';
+import { TypefactureComponent } from './typefacture/typefacture.component';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { ListUserComponent } from './list-user/list-user.component';
     FormulaireComponent,
     ListFactureComponent,
     UapdateFactureComponent,
-    ListUserComponent
+    ListUserComponent,
+    TypefactureComponent
   ],
   providers: [],
   exports: [

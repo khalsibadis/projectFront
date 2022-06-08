@@ -6,6 +6,11 @@
           <div class="card-header">
             <h4 class="card-title">List des Factures</h4>
           </div>
+          <div class="iq-search-bar device-search">
+            <div action="#" class="searchbox"  style="padding:20px;padding-right: 900px">
+              <input type="text" [(ngModel)]="searchText" class="text search-input" placeholder="Search here..." >
+            </div>
+          </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table">
@@ -39,11 +44,11 @@
 
                 </thead>
                 <tbody>
-                <tr *ngFor="let facture of lisfFactures " >
+                <tr *ngFor="let facture of lisfFactures | filter:searchText |  paginate: { itemsPerPage: 9, currentPage: p }" >
                   <td class="text_align-center">{{facture.id}}</td>
                   <td class="text_align-center">{{facture.etatPayement}}</td>
                   <td class="text_align-centert">{{facture.total}}</td>
-                  <td class="text_align-center">{{facture.typeFacture}}</td>
+                  <td class="text_align-center" >{{facture.typeFacture}}</td>
                   <td class="text_align-center">{{facture.nbrPoint}}</td>
                   <td class="text_align-center">{{facture.fournisseur.nom}}</td>
                   <td class="text_align-center">{{facture.user}}</td>
@@ -57,6 +62,7 @@
                 </tr>
                 </tbody>
               </table>
+              <pagination-controls (pageChange) ="p = $event" ></pagination-controls>
             </div>
           </div>
         </div>

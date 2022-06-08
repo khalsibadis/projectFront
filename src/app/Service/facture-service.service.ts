@@ -22,12 +22,12 @@ export class FactureServiceService {
   deleteFactureService(id: string) {
     return this.http.delete(this.url + '/supprimerFacture/'+id);
   }
-  addFactureService(facture: Facture,idFournisseur:string):Observable<any>{
-    return this.http.post(this.url+'/ajouterFacture/'+idFournisseur , facture);
+  addFactureService(facture: Facture,idFournisseur:string,idType:string):Observable<any>{
+    return this.http.post(this.url+'/ajouterFacture/'+idFournisseur+'/'+idType , facture);
   }
 
-  modifierFacture(facture: Object){
-    return this.http.put<Facture>(this.url+'/modifierFacture',facture);
+  modifierFacture(facture: Object,idT:string){
+    return this.http.put<Facture>(this.url+'/modifierFacture/'+idT,facture);
   }
 
   getFactureById(id: number){

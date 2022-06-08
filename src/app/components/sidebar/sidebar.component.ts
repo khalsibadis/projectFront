@@ -10,6 +10,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'design_app', class: '' },
     { path: '/user-profile', title: 'User Profile',  icon: 'users_single-02', class: '' },
     { path: '/Facture', title: 'Facture',  icon: 'education_atom', class: '' },
+    { path: '/TypeFacture', title: 'Type Facture',  icon: 'education_atom', class: '' },
     { path: '/Contact', title: 'Contact',  icon: 'ui-1_bell-53', class: '' },
 
 
