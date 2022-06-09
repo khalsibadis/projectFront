@@ -18,16 +18,17 @@
   <div class="form-container sign-in-container">
     <form action="#">
       <h1>Sign in</h1>
+      <strong *ngIf="htmlStr==1" style="color: crimson" >Vérifier votre mote de passe ou user nom</strong>
       <div class="social-container">
         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
         <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
         <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
       </div>
       <span>or use your account</span>
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
+      <input type="email" placeholder="Email" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" />
+      <input type="password" placeholder="Password" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}"/>
       <a href="#">Forgot your password?</a>
-      <button (click)="RouteDashbord()">Sign In</button>
+      <button (click)="login()">Sign In</button>
     </form>
   </div>
   <div class="overlay-container">

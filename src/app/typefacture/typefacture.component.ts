@@ -3,7 +3,6 @@ import {TypeFacture} from '../Model/TypeFacture';
 import {Fournisseur} from '../Model/Fournisseur';
 import {TypeFactureService} from '../Service/type-facture.service';
 import {AuthService} from '../Service/auth.service';
-//import {ModalDirective} from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-typefacture',
@@ -20,6 +19,7 @@ export class TypefactureComponent implements OnInit {
   ngOnInit(): void {
     this.getUser();
     this.getListTypeFacture();
+    this.up=0;
   }
 
   getUser(){
@@ -27,6 +27,15 @@ export class TypefactureComponent implements OnInit {
       (data)=> {this.fournisseur=data
       }
     )
+  }
+
+
+  up:number=0;
+  Update (type:TypeFacture){
+  this.up=1;
+  this.typeFactureService.getTypeFactureById(type.id).subscribe(
+    (data)=>(this.typeFacture=data,console.log(data))
+  )
   }
 
   getListTypeFacture(){
@@ -37,8 +46,14 @@ export class TypefactureComponent implements OnInit {
   }
 
   onSubmit(){
+    if (this.up==0){
     this.typeFactureService.AddTypeFacture(this.typeFacture,String(this.fournisseur.id)).subscribe();
     this.ListTypeFacture.push(this.typeFacture);
+    }
+    else{
+      this.typeFactureService.Update(this.typeFacture).subscribe();
+      this.up=0;
+    }
   }
   deleteTF(typeFacture:TypeFacture){
 

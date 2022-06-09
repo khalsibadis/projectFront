@@ -1,15 +1,19 @@
 <div class="panel-header panel-header-sm">
 </div>
-<h1>List User</h1>
+<h1>Liste des crédits</h1>
 <div class="container-fluid">
   <div class="row">
    <div class="col-md-3" *ngFor="let Facture of ListFacture">
      <div class="card" style="width: 18rem;">
-       <img src="./src/assets/img/user.png" class="card-img-top" alt="...">
        <div class="card-body">
-          <h5 class="card-title">{{Facture.user}}</h5>
+          <h5 class="card-title">Client : {{Facture.user}}</h5>
+          <h5 class="card-title">Credit : {{Facture.total}}</h5>
        </div>
-     </div>
+       <td class="text_align-center">
+         <a   [routerLink]="['/Facture/UapdateFacture',Facture.id]" class="btn btn-info cart-btn-transform m-3" data-abc="true">Update</a>
+       </td>
+
+   </div>
    </div>
   </div>
 </div>

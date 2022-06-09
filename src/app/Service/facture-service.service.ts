@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Facture} from '../Model/Facture';
 import {Observable} from 'rxjs';
+import {Fournisseur} from '../Model/Fournisseur';
 
 // @ts-ignore
 @Injectable({
@@ -34,5 +35,8 @@ export class FactureServiceService {
     return this.http.get<Facture>(this.url+'/afficherFacture/'+id);
   }
 
+  Login(username:string,pass:string) {
+    return this.http.get<Fournisseur>(this.url + '/Login/' + username + '/' + pass)
 
-}
+  }
+  }

@@ -10,10 +10,13 @@ import {Observable} from 'rxjs';
 })
 export class UserProfileComponent implements OnInit {
 fournisseur:Fournisseur;
+token:string;
   constructor(private fournisserService:FournisserService) {}
 
   ngOnInit() {
-    this.fournisserService.afficherFournisseurById(1).subscribe(
+    this.token = localStorage.getItem('ID');
+
+    this.fournisserService.afficherFournisseurById(Number(this.token)).subscribe(
       (data)=>this.fournisseur=data);
     ;
   }

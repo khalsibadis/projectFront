@@ -137,4 +137,8 @@ export class NavbarComponent implements OnInit {
 
         }
     }
+  logout() {
+    localStorage.removeItem('ID');
+    this.router.navigate(['/']);
+  }
 }

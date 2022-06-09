@@ -32,52 +32,10 @@
             </div>
             <div class="card-header d-flex justify-content-between">
             <button (click)="deleteTF(list)" type="button" class="btn btn-danger mr-1" data-toggle="modal">delete</button>
-            <button  type="button" (click)="successModal.show()" class="btn btn-secondary mr-1" data-toggle="modal">update</button></div>
+            <button  type="button" (click)="Update(list)" class="btn btn-secondary mr-1" data-toggle="modal">update</button></div>
           </div>
 
   </div>
 </div>
 </div>
 </div>
-
-
-
-
-
-
-<!--Modal-->
-
-<div bsModal #successModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">ADD <strong>QVT</strong></h4>
-        <button type="button" class="close" (click)="successModal.hide()" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form action="" method="post" class="form-horizontal"  #f3="ngForm">
-
-        <div class="card-body">
-          <div class="form-group row">
-            <label class="col-sm-5 col-form-label" for="input-normal">Description : {{newQvt.description}}</label>
-            <div class="col-sm-6">
-              <input [(ngModel)]="newQvt.description"  type="text" id="input-normal5" name="input-normal" class="form-control" required>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-5 col-form-label" for="input-normal">nbr Question : {{newQvt.nbrQuestion}}</label>
-            <div class="col-sm-6">
-              <input [(ngModel)]="newQvt.nbrQuestion" type="number" id="input-normal6" name="input-normal" class="form-control" required>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" (click)="successModal.hide()">Close</button>
-          <button (click)="successModal.hide()" (click)="Uapdate()"  [disabled]="f3.invalid" type="button" class="btn btn-success">Save changes</button>
-        </div>
-      </form>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-

@@ -29,7 +29,7 @@ export class UapdateFactureComponent implements OnInit {
   ListClient:Fournisseur[];
   ListTypeFacture:TypeFacture[];
   fournisseur:Fournisseur;
-
+  id:number;
   ngOnInit(): void {
     this.Newfacture=new Facture();
 
@@ -54,9 +54,11 @@ export class UapdateFactureComponent implements OnInit {
 
     this.activatedRoute.paramMap.subscribe(
       d=>{
-        let id =Number(d.get('id'));
+       // let id =Number(d.get('id'));
+        this.id =Number(d.get('id'));
+        console.log(this.id)
 
-       this.factureServiceService.getFactureById(id).subscribe(
+       this.factureServiceService.getFactureById(this.id).subscribe(
           d=>{
             this.Newfacture=d;
             console.log(this.Newfacture)
@@ -69,6 +71,7 @@ export class UapdateFactureComponent implements OnInit {
 
   idType:string
 Uapdate(){
+    console.log(this.Newfacture.id)
     this.factureServiceService.modifierFacture(this.Newfacture,this.idType).subscribe(
       d=>{
         this.router.navigate(['Facture']);

@@ -4,6 +4,7 @@ import {Facture} from '../Model/Facture';
 
 
 import swal from 'sweetalert';
+import {FournisserService} from '../Service/FournisserService';
 
 @Component({
   selector: 'app-list-facture',
@@ -12,13 +13,15 @@ import swal from 'sweetalert';
 })
 export class ListFactureComponent implements OnInit {
 
-  constructor(private  factureService: FactureServiceService) {
+  constructor(private  factureService: FactureServiceService,private fournisserService:FournisserService) {
   }
 
   lisfFactures: Facture[];
-
+  token:string;
   ngOnInit(): void {
-    this.factureService.getListFacture().subscribe(
+    this.token = localStorage.getItem('ID');
+
+    this.fournisserService.getListFactureByFournisser(this.token).subscribe(
       (data) =>{this.lisfFactures =data,console.log(data)});
   }
 

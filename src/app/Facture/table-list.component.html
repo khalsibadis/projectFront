@@ -16,17 +16,12 @@
               <table class="table">
                 <thead class=" text-primary">
                 <th>
-                  Id
-                </th>
-                <th>
                   EtatPayement
                 </th>
                 <th>
                   Total
                 </th>
-                <th class="text_align-center">
-                  TypeFacture
-                </th>
+
                 <th class="text_align-center">
                   Point
                 </th>
@@ -45,10 +40,8 @@
                 </thead>
                 <tbody>
                 <tr *ngFor="let facture of lisfFactures | filter:searchText |  paginate: { itemsPerPage: 9, currentPage: p }" >
-                  <td class="text_align-center">{{facture.id}}</td>
                   <td class="text_align-center">{{facture.etatPayement}}</td>
                   <td class="text_align-centert">{{facture.total}}</td>
-                  <td class="text_align-center" >{{facture.typeFacture}}</td>
                   <td class="text_align-center">{{facture.nbrPoint}}</td>
                   <td class="text_align-center">{{facture.fournisseur.nom}}</td>
                   <td class="text_align-center">{{facture.user}}</td>
